@@ -27,7 +27,7 @@ pipeline {
             
             steps{
                 unstash 'mynotsodummy'
-                docker version
+                sh 'docker version'
             }
             
         }
