@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
+                stash includes: '/var/jenkins_home/workspace/notsodummy/target/my-app-1.0-SNAPSHOT.jar', name: 'mynotsodummy'
             }
         }
         stage('Test') {
@@ -22,6 +23,12 @@ pipeline {
             }
         }
         stage('DockerBuild'){
+            agent any             
+            
+            steps{
+                unstash 'mynotsodummy'
+                docker version
+            }
             
         }
     }
