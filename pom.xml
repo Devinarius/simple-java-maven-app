@@ -13,7 +13,7 @@
         <name>aebfa632800a-snapshots</name>
         <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
-</distributionManagement>
+  </distributionManagement>
   <dependencies>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
